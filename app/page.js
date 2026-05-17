@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,7 +12,6 @@ export default function Home() {
   return (
     <main className="scroll-smooth">
 
-      <Navbar />
 
       {/* HERO SECTION */}
 
@@ -88,266 +88,1042 @@ export default function Home() {
 
       {/* PRODUCTS SLIDER */}
 
-      <section id="products" className="bg-gray-100 py-24 px-8 scroll-mt-32">
+<section
+  id="products"
+  className="
+    bg-gradient-to-b
+    from-gray-50
+    to-white
+    py-24
+    px-4
+    md:px-8
+    scroll-mt-32
+  "
+>
 
-        <h2 className="text-5xl font-bold text-center mb-16">
-          Our Products
-        </h2>
+  {/* HEADING */}
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          modules={[Autoplay, Pagination]}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
+  <div className="text-center mb-16">
+
+    <p className="text-red-600 font-semibold tracking-[4px] uppercase mb-4">
+      Our Products
+    </p>
+
+    <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900">
+
+       Fire Safety
+      <span className="text-red-600">
+        {" "}Solutions
+      </span>
+
+    </h2>
+
+    <p className="text-gray-500 mt-6 max-w-3xl mx-auto text-lg leading-8">
+
+      Advanced fire extinguishers, suppression systems,
+      alarms and industrial safety equipment designed
+      for maximum protection.
+
+    </p>
+
+  </div>
+
+
+
+  {/* SLIDER */}
+
+  <Swiper
+    slidesPerView={1}
+    spaceBetween={24}
+    loop={true}
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    pagination={{ clickable: true }}
+    modules={[Autoplay, Pagination]}
+    breakpoints={{
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    }}
+    className="pb-20"
+  >
+
+
+
+    {/* CARD 1 */}
+
+    <SwiperSlide>
+
+      <div
+      className="
+      group
+      bg-white
+      rounded-2xl
+      overflow-hidden
+      shadow-lg
+      hover:shadow-xl
+      transition-all
+      duration-500
+      border
+      border-gray-200
+      hover:-translate-y-2
+    "
+      >
+
+        {/* IMAGE */}
+
+        <div
+          className="
+            h-[320px]
+            bg-white
+            flex
+            items-center
+            justify-center
+            overflow-hidden
+          "
         >
 
-          <SwiperSlide>
-            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src="/images/fire1.png"
+            alt="ABC Fire Extinguisher"
+            className="
+              h-full
+              w-full
+              object-contain
+              p-6
+              group-hover:scale-105
+              transition-transform
+              duration-500
+            "
+          />
 
-              <img
-                src="/images/fire1.png"
-                alt="Fire Extinguisher"
-                className="w-full h-72 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">
-                  ABC Fire Extinguisher
-                </h3>
-
-                <p className="text-gray-600">
-                  Suitable for commercial & industrial use.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
+        </div>
 
 
-          <SwiperSlide>
-            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
 
-              <img
-                src="/images/fire2.png"
-                alt="CO2 Extinguisher"
-                className="w-full h-72 object-cover"
-              />
+        {/* CONTENT */}
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">
-                  CO2 Fire Extinguisher
-                </h3>
+        <div className="p-7">
 
-                <p className="text-gray-600">
-                  Ideal for electrical fire protection.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
+          <h3 className="text-[30px] font-bold text-gray-900 mb-4">
+
+            ABC Fire Extinguisher
+
+          </h3>
+
+          <p className="text-gray-600 leading-8 text-[17px] mb-6">
+
+            Suitable for commercial, industrial and
+            residential fire safety applications.
+
+          </p>
+
+          <Link
+            href="/products/abc-fire-extinguisher"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-red-600
+              font-semibold
+              hover:gap-4
+              transition-all
+            "
+          >
+
+            View Details →
+
+          </Link>
+
+        </div>
+
+      </div>
+
+    </SwiperSlide>
 
 
-          <SwiperSlide>
-            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
 
-              <img
-                src="/images/fire3.png"
-                alt="Fire Alarm"
-                className="w-full h-72 object-cover"
-              />
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">
-                  Fire Alarm System
-                </h3>
+    {/* CARD 2 */}
 
-                <p className="text-gray-600">
-                  Advanced fire detection systems.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
+    <SwiperSlide>
 
-        </Swiper>
+      <div
+      className="
+        group
+        bg-white
+        rounded-2xl
+        overflow-hidden
+        shadow-lg
+        hover:shadow-xl
+        transition-all
+        duration-500
+        border
+        border-gray-200
+        hover:-translate-y-2
+      "
+      >
 
-      </section>
+        <div
+          className="
+            h-[320px]
+            bg-white
+            flex
+            items-center
+            justify-center
+            overflow-hidden
+          "
+        >
+
+          <img
+            src="/images/co2-fire.png"
+            alt="CO2 Fire Extinguisher"
+            className="
+              h-full
+              w-full
+              object-contain
+              p-6
+              group-hover:scale-105
+              transition-transform
+              duration-500
+            "
+          />
+
+        </div>
+
+        <div className="p-7">
+
+          <h3 className="text-[30px] font-bold text-gray-900 mb-4">
+            CO2 Fire Extinguisher
+          </h3>
+
+          <p className="text-gray-600 leading-8 text-[17px] mb-6">
+            Ideal for electrical panels, server rooms
+            and office fire protection.
+          </p>
+
+          <Link
+            href="/products/co2-fire-extinguisher"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-red-600
+              font-semibold
+              hover:gap-4
+              transition-all
+            "
+          >
+            View Details →
+          </Link>
+
+        </div>
+
+      </div>
+
+    </SwiperSlide>
+
+
+
+
+    {/* CARD 3 */}
+
+    <SwiperSlide>
+
+      <div
+       className="
+        group
+        bg-white
+        rounded-2xl
+        overflow-hidden
+        shadow-lg
+        hover:shadow-xl
+        transition-all
+        duration-500
+        border
+        border-gray-200
+        hover:-translate-y-2
+      "
+      >
+
+        <div
+          className="
+            h-[320px]
+            bg-white
+            flex
+            items-center
+            justify-center
+          "
+        >
+
+          <img
+            src="/images/watermist-cafs-250l.png"
+            alt="Watermist CAFS"
+            className="
+              h-full
+              w-full
+              object-contain
+              p-6
+              group-hover:scale-105
+              transition-transform
+              duration-500
+            "
+          />
+
+        </div>
+
+        <div className="p-7">
+
+          <h3 className="text-[30px] font-bold text-gray-900 mb-4">
+            Watermist CAFS System
+          </h3>
+
+          <p className="text-gray-600 leading-8 text-[17px] mb-6">
+            Advanced industrial fire suppression
+            system with rapid cooling technology.
+          </p>
+
+          <Link
+            href="/products/watermist-cafs-250l"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-red-600
+              font-semibold
+              hover:gap-4
+              transition-all
+            "
+          >
+            View Details →
+          </Link>
+
+        </div>
+
+      </div>
+
+    </SwiperSlide>
+
+  </Swiper>
+
+</section>
 
 
       {/* ABOUT US */}
 
-      <section
-        id="about"
-        className="py-24 px-8 bg-white scroll-mt-32"
+<section
+  id="about"
+  className="
+    py-24
+    px-4
+    md:px-8
+    bg-gradient-to-b
+    from-white
+    to-gray-50
+    scroll-mt-32
+    overflow-hidden
+  "
+>
+
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+
+
+
+
+    {/* LEFT IMAGE */}
+
+    <div className="relative">
+
+      <div
+        className="
+          overflow-hidden
+          rounded-[32px]
+          shadow-2xl
+          border
+          border-gray-200
+          bg-white
+        "
       >
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <img
+          src="/images/about-fire.png"
+          alt="About Fire Safety"
+          className="
+            w-full
+            h-[520px]
+            object-cover
+            hover:scale-105
+            transition-all
+            duration-700
+          "
+        />
 
-          {/* LEFT IMAGE */}
-
-          <div>
-
-            <img
-              src="/images/about-fire.png"
-              alt="About Fire Safety"
-              className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
-            />
-
-          </div>
-
-
-          {/* RIGHT CONTENT */}
-
-          <div>
-
-            <p className="text-red-600 font-bold text-lg mb-4">
-              ABOUT US
-            </p>
-
-            <h2 className="text-5xl font-bold leading-tight mb-8">
-              Trusted Fire Safety Solutions Provider
-            </h2>
-
-            <p className="text-gray-600 text-lg leading-9 mb-6">
-
-              We provide complete fire protection solutions for
-              residential, commercial, and industrial properties.
-              Our mission is to ensure maximum safety through
-              high-quality fire extinguishers, alarm systems,
-              refilling services, and fire safety equipment.
-
-            </p>
-
-            <p className="text-gray-600 text-lg leading-9 mb-10">
-
-              With years of experience in the fire safety industry,
-              we are committed to delivering reliable products,
-              certified services, and professional support to
-              protect lives and property.
-
-            </p>
+      </div>
 
 
-            {/* FEATURES */}
 
-            <div className="grid grid-cols-2 gap-6">
+      {/* FLOATING EXPERIENCE CARD */}
 
-              <div className="shadow-lg rounded-2xl p-6">
+      <div
+        className="
+          absolute
+          bottom-6
+          left-6
+          bg-white
+          shadow-xl
+          rounded-2xl
+          px-7
+          py-5
+          border
+          border-gray-200
+        "
+      >
 
-                <h3 className="text-4xl font-bold text-red-600 mb-2">
-                  10+
-                </h3>
+        <h3 className="text-4xl font-extrabold text-red-600">
+          10+
+        </h3>
 
-                <p className="text-gray-600">
-                  Years Experience
-                </p>
+        <p className="text-gray-700 font-medium">
+          Years Experience
+        </p>
 
-              </div>
+      </div>
 
-
-              <div className="shadow-lg rounded-2xl p-6">
-
-                <h3 className="text-4xl font-bold text-red-600 mb-2">
-                  500+
-                </h3>
-
-                <p className="text-gray-600">
-                  Happy Clients
-                </p>
-
-              </div>
-
-
-              <div className="shadow-lg rounded-2xl p-6">
-
-                <h3 className="text-4xl font-bold text-red-600 mb-2">
-                  1000+
-                </h3>
-
-                <p className="text-gray-600">
-                  Products Installed
-                </p>
-
-              </div>
+    </div>
 
 
-              <div className="shadow-lg rounded-2xl p-6">
 
-                <h3 className="text-4xl font-bold text-red-600 mb-2">
-                  24/7
-                </h3>
 
-                <p className="text-gray-600">
-                  Support Service
-                </p>
 
-              </div>
+    {/* RIGHT CONTENT */}
 
-            </div>
+    <div>
 
-          </div>
+      {/* SUBTITLE */}
+
+      <p
+        className="
+          text-red-600
+          font-bold
+          tracking-[5px]
+          uppercase
+          mb-5
+        "
+      >
+        About Us
+      </p>
+
+
+
+      {/* TITLE */}
+
+      <h2
+        className="
+          max-w-[700px]
+          text-4xl
+          md:text-5xl
+          lg:text-6xl
+          font-extrabold
+          leading-tight
+          text-gray-900
+          mb-8
+        "
+      >
+
+        Trusted Fire
+        <span className="text-red-600">
+          {" "}Safety Solutions
+        </span>
+
+        <br />
+
+        For Every Industry
+
+      </h2>
+
+
+
+      {/* DESCRIPTION */}
+
+      <p
+        className="
+          text-gray-600
+          text-[17px]
+          leading-8
+          mb-6
+        "
+      >
+
+        We provide complete fire protection solutions
+        for residential, commercial, and industrial
+        properties with certified products and expert
+        installation services.
+
+      </p>
+
+      <p
+        className="
+          text-gray-600
+          text-[17px]
+          leading-8
+          mb-12
+        "
+      >
+
+        Our mission is to deliver advanced fire safety
+        systems, reliable maintenance services and
+        emergency protection solutions that safeguard
+        lives and property.
+
+      </p>
+
+
+
+
+      {/* STATS */}
+
+      <div className="grid grid-cols-2 gap-6">
+
+        {/* CARD 1 */}
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            shadow-lg
+            rounded-2xl
+            p-7
+            hover:-translate-y-2
+            hover:shadow-2xl
+            transition-all
+            duration-500
+          "
+        >
+
+          <h3 className="text-5xl font-extrabold text-red-600 mb-3">
+            500+
+          </h3>
+
+          <p className="text-gray-700 text-lg">
+            Happy Clients
+          </p>
 
         </div>
 
-      </section>
+
+
+        {/* CARD 2 */}
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            shadow-lg
+            rounded-2xl
+            p-7
+            hover:-translate-y-2
+            hover:shadow-2xl
+            transition-all
+            duration-500
+          "
+        >
+
+          <h3 className="text-5xl font-extrabold text-red-600 mb-3">
+            1000+
+          </h3>
+
+          <p className="text-gray-700 text-lg">
+            Products Installed
+          </p>
+
+        </div>
+
+
+
+        {/* CARD 3 */}
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            shadow-lg
+            rounded-2xl
+            p-7
+            hover:-translate-y-2
+            hover:shadow-2xl
+            transition-all
+            duration-500
+          "
+        >
+
+          <h3 className="text-5xl font-extrabold text-red-600 mb-3">
+            24/7
+          </h3>
+
+          <p className="text-gray-700 text-lg">
+            Support Service
+          </p>
+
+        </div>
+
+
+
+        {/* CARD 4 */}
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            shadow-lg
+            rounded-2xl
+            p-7
+            hover:-translate-y-2
+            hover:shadow-2xl
+            transition-all
+            duration-500
+          "
+        >
+
+          <h3 className="text-5xl font-extrabold text-red-600 mb-3">
+            ISO
+          </h3>
+
+          <p className="text-gray-700 text-lg">
+            Certified Products
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* CLIENTS SECTION */}
 
-      <section id="clients" className="py-24 px-8 scroll-mt-32">
+   <section
+  id="clients"
+  className="
+    py-24
+    px-4
+    md:px-8
+    bg-gradient-to-b
+    from-gray-50
+    to-white
+    scroll-mt-32
+    overflow-hidden
+  "
+>
 
-        <h2 className="text-5xl font-bold text-center mb-16">
-          Our Clients
-        </h2>
+  <div className="max-w-7xl mx-auto">
 
-        <Swiper
-          slidesPerView={2}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-          breakpoints={{
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 5,
-            },
-          }}
+
+
+
+    {/* HEADING */}
+
+    <div className="text-center mb-16">
+
+      <p
+        className="
+          text-red-600
+          font-bold
+          tracking-[4px]
+          uppercase
+          mb-4
+        "
+      >
+        Our Clients
+      </p>
+
+      <h2
+        className="
+          text-4xl
+          md:text-5xl
+          font-extrabold
+          text-gray-900
+          leading-tight
+        "
+      >
+
+        Trusted By
+        <span className="text-red-600">
+          {" "}Leading Brands
+        </span>
+
+      </h2>
+
+      <p
+        className="
+          text-gray-500
+          mt-6
+          max-w-3xl
+          mx-auto
+          text-lg
+          leading-8
+        "
+      >
+
+        We proudly provide fire safety solutions
+        across luxury residential projects,
+        commercial towers, malls, corporate offices
+        and industrial facilities in Gurugram & NCR.
+
+      </p>
+
+    </div>
+
+
+
+
+    {/* CLIENTS SLIDER */}
+
+    <Swiper
+      slidesPerView={2}
+      spaceBetween={24}
+      loop={true}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay]}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 5,
+        },
+      }}
+      className="pb-10"
+    >
+
+
+
+      {/* CLIENT 1 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
         >
 
-          <SwiperSlide>
-            <img src="/images/client1.png" className="h-24 mx-auto object-contain" />
-          </SwiperSlide>
+          <img
+            src="/images/client1.jpeg"
+            alt="DLF Cyber City"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
 
-          <SwiperSlide>
-            <img src="/images/client2.png" className="h-24 mx-auto object-contain" />
-          </SwiperSlide>
+        </div>
 
-          <SwiperSlide>
-            <img src="/images/client3.png" className="h-24 mx-auto object-contain" />
-          </SwiperSlide>
+      </SwiperSlide>
 
-          <SwiperSlide>
-            <img src="/images/client4.png" className="h-24 mx-auto object-contain" />
-          </SwiperSlide>
 
-        </Swiper>
 
-      </section>
+
+      {/* CLIENT 2 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client2.jpeg"
+            alt="M3M"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+      {/* CLIENT 3 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client3.jpeg"
+            alt="Ambience Mall"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+      {/* CLIENT 4 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client4.jpeg"
+            alt="Vatika"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+      {/* CLIENT 5 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client5.jpeg"
+            alt="DLF Camellias"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+      {/* CLIENT 6 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client6.jpeg"
+            alt="Elan"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+      {/* CLIENT 7 */}
+
+      <SwiperSlide>
+
+        <div
+          className="
+            bg-white
+            border
+            border-gray-200
+            rounded-2xl
+            h-40
+            flex
+            items-center
+            justify-center
+            shadow-lg
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            p-6
+          "
+        >
+
+          <img
+            src="/images/client7.jpeg"
+            alt="Unitech"
+            className="
+              max-h-20
+              object-contain
+              grayscale
+              hover:grayscale-0
+              transition-all
+              duration-500
+            "
+          />
+
+        </div>
+
+      </SwiperSlide>
+
+
+
+
+
+
+    </Swiper>
+
+  </div>
+
+</section>
 
 
       {/* ENQUIRY FORM */}
@@ -404,27 +1180,7 @@ export default function Home() {
       </section>
 
 
-      {/* FOOTER */}
 
-      <footer className="bg-black text-white text-center py-10">
-
-        <h2 className="text-3xl font-bold text-red-500 mb-4">
-          FireSafe
-        </h2>
-
-        <p className="mb-2">
-          GST No: 07ABCDE1234F1Z5
-        </p>
-
-        <p className="mb-2">
-          Delhi, India
-        </p>
-
-        <p>
-          © 2026 FireSafe. All Rights Reserved.
-        </p>
-
-      </footer>
 
     </main>
   );
