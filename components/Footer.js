@@ -14,7 +14,7 @@ export default function Footer() {
     <div>
 
       <h2 className="text-3xl font-bold text-red-600 mb-6">
-        FireSafe
+        EKTA Fire Service
       </h2>
 
       <p className="text-gray-400 leading-8">
@@ -40,31 +40,34 @@ export default function Footer() {
       <ul className="space-y-4 text-gray-400">
 
         <li>
-          <Link href="/#home" className="hover:text-red-500">
+         <Link
+            href="/#home"
+            className="hover:text-red-500"
+          >
             Home
           </Link>
         </li>
 
         <li>
-          <Link href="/#about" className="hover:text-red-500">
+          <Link href="/#about" className="hover:text-red-500 scroll-mt-32">
             About
           </Link>
         </li>
 
         <li>
-          <Link href="/#services" className="hover:text-red-500">
+          <Link href="/#services" className="hover:text-red-500 scroll-mt-32">
             Services
           </Link>
         </li>
 
         <li>
-          <Link href="/#clients" className="hover:text-red-500">
+          <Link href="/#clients" className="hover:text-red-500 scroll-mt-32">
             Clients
           </Link>
         </li>
 
         <li>
-          <Link href="/#contact" className="hover:text-red-500">
+          <Link href="/#contact" className="hover:text-red-500 scroll-mt-32">
             Contact
           </Link>
         </li>

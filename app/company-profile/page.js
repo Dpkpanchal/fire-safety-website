@@ -1,10 +1,11 @@
-export default function HomePage() {
+
+export default function CompanyProfilePage() {
 
   return (
 
     <>
 
-      <section className="bg-white scroll-mt-32">
+      <section className="bg-white">
 
   {/* HERO SECTION */}
 
@@ -40,7 +41,7 @@ export default function HomePage() {
 
   {/* ABOUT COMPANY */}
 
-  <section className="py-24 px-4 md:px-8 bg-white scroll-mt-32 overflow-hidden"  id="about">
+  <section className="py-24 px-4 md:px-8 bg-white">
 
     <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
@@ -133,7 +134,7 @@ export default function HomePage() {
 
   {/* OUR SERVICES */}
 
-  <section className="py-24 bg-gray-50 px-4 md:px-8 scroll-mt-32 overflow-hidden"  id="services">
+  <section className="py-24 bg-gray-50 px-4 md:px-8">
 
     <div className="max-w-7xl mx-auto">
 
@@ -327,7 +328,7 @@ export default function HomePage() {
 
   {/* CLIENTS */}
 
-  <section className="py-24 px-4 md:px-8 bg-white scroll-mt-32 overflow-hidden"  id="clients">
+  <section className="py-24 px-4 md:px-8 bg-white">
 
     <div className="max-w-7xl mx-auto text-center">
 
@@ -379,7 +380,7 @@ export default function HomePage() {
 
   {/* CONTACT CTA */}
 
-  <section className="py-24 bg-red-600 text-white text-center px-4 md:px-8 scroll-mt-32 overflow-hidden" id="contact">
+  <section className="py-24 bg-red-600 text-white text-center px-4 md:px-8">
 
     <div className="max-w-4xl mx-auto">
 
@@ -404,7 +405,7 @@ export default function HomePage() {
         </a>
 
         <a
-          href="/#enquiry"
+          href="/#contact"
           className="border border-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-red-600 transition"
         >
           Get Free Quote
@@ -416,97 +417,7 @@ export default function HomePage() {
 
   </section>
 
-
-  </section>
-
-
-  <section className="py-24 bg-gray-50 px-4 md:px-8 scroll-mt-32" id="enquiry">
-
-    <div className="max-w-4xl mx-auto">
-
-      <div className="bg-white rounded-[32px] shadow-2xl p-8 md:p-12">
-
-        <div className="mb-10 text-center">
-          <p className="text-red-600 font-semibold uppercase tracking-[4px] mb-4">
-            Enquiry Form
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Send Your Fire Safety Requirements
-          </h2>
-          <p className="mt-4 text-gray-600 leading-8">
-            Share your details and we’ll get back to you with a customised quote and service plan.
-          </p>
-        </div>
-
-        <form className="space-y-6">
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="w-full border border-gray-300 rounded-2xl px-5 py-4 outline-none focus:border-red-600"
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              className="w-full border border-gray-300 rounded-2xl px-5 py-4 outline-none focus:border-red-600"
-            />
-          </div>
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            className="w-full border border-gray-300 rounded-2xl px-5 py-4 outline-none focus:border-red-600"
-          />
-
-          <div>
-            <select
-              name="service"
-              defaultValue=""
-              className="w-full border border-gray-300 rounded-2xl px-5 py-4 outline-none focus:border-red-600"
-            >
-              <option value="" disabled>
-                Select Service
-              </option>
-              <option>Fire Extinguisher Installation</option>
-              <option>Fire Alarm System</option>
-              <option>Fire Hydrant System</option>
-              <option>AMC Maintenance</option>
-              <option>Fire NOC Consultancy</option>
-            </select>
-          </div>
-
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            className="w-full border border-gray-300 rounded-2xl px-5 py-4 outline-none focus:border-red-600"
-          />
-
-          <button
-            type="submit"
-            className="w-full bg-red-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-black transition-all duration-300"
-          >
-            Send Enquiry
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-
-  
-
+</section>
 
 
     </>
@@ -514,3 +425,5 @@ export default function HomePage() {
   );
 
 }
+
+

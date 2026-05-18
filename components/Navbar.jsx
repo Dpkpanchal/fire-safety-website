@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
 
-   <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white shadow-md">
 
       {/* TOP BAR */}
 
@@ -34,38 +34,38 @@ export default function Navbar() {
 
       {/* MAIN NAVBAR */}
 
-  <nav className="max-w-7xl mx-auto flex justify-between items-center px-3 md:px-2 h-[78px] md:h-[95px] relative">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center px-3 md:px-2 h-[78px] md:h-[95px] relative">
 
-  
+
 
         {/* LOGO */}
 
-   <Link
-      href="/"
-      className="flex items-center -ml-2"
-    >
+        <Link
+          href="/#home"
+          className="flex items-center -ml-2"
+        >
 
-   <Image
-      src="/images/logo.png"
-      alt="EKTA Fire Service"
-      width={150}
-      height={50}
-      priority
-      className="
+          <Image
+            src="/images/logo.png"
+            alt="EKTA Fire Service"
+            width={150}
+            height={50}
+            priority
+            className="
         w-[120px]
         sm:w-[135px]
         md:w-[150px]
         h-auto
         object-contain
       "
-    />
+          />
 
-    </Link>
+        </Link>
 
 
         {/* DESKTOP MENU */}
 
-       <div className="hidden lg:flex items-center gap-10 text-[17px] font-semibold">
+        <div className="hidden lg:flex items-center gap-10 text-[17px] font-semibold">
 
           <a
             href="/#home"
@@ -146,27 +146,27 @@ export default function Navbar() {
                   Fire Extinguishers
                 </h2>
 
-              <ul className="space-y-4 text-gray-700 font-medium">
+                <ul className="space-y-4 text-gray-700 font-medium">
 
                   {products
-                   .filter(
+                    .filter(
                       (product) => product.category === "Fire Extinguishers"
                     )
-                  .map((product) => (
+                    .map((product) => (
 
-                    <li key={product.id}>
+                      <li key={product.id}>
 
-                      <Link
-                        href={`/products/${product.slug}`}
-                        className="block hover:text-red-600 transition"
-                        onClick={() => setShowMegaMenu(false)}
-                      >
-                        {product.name}
-                      </Link>
+                        <Link
+                          href={`/products/${product.slug}`}
+                          className="block hover:text-red-600 transition"
+                          onClick={() => setShowMegaMenu(false)}
+                        >
+                          {product.name}
+                        </Link>
 
-                    </li>
+                      </li>
 
-                  ))}
+                    ))}
 
                 </ul>
 
@@ -306,6 +306,8 @@ export default function Navbar() {
             Clients
           </a>
 
+
+
           <a
             href="/#contact"
             className="hover:text-red-600 transition"
@@ -337,108 +339,318 @@ export default function Navbar() {
 
 
 
+
+
       {/* MOBILE MENU */}
 
       {mobileMenu && (
 
-        <div className="lg:hidden bg-white shadow-xl px-6 pb-8">
+        <div
+          className="
+      lg:hidden
+      bg-white
+      shadow-2xl
+      border-t
+      border-gray-100
+      px-6
+      py-6
+      max-h-[85vh]
+      overflow-y-auto
+    "
+        >
 
-          <div className="flex flex-col gap-5 text-lg font-semibold">
+          <div className="flex flex-col gap-5 text-[17px] font-semibold">
+
+            {/* HOME */}
 
             <a
-              href="#home"
+              href="/#home"
               onClick={() => setMobileMenu(false)}
+              className="hover:text-red-600 transition"
             >
               Home
             </a>
 
+
+
+            {/* ABOUT */}
+
             <a
-              href="#about"
+              href="/#about"
               onClick={() => setMobileMenu(false)}
+              className="hover:text-red-600 transition"
             >
               About
             </a>
 
+
+
+            {/* SERVICES */}
+
             <a
-              href="#services"
+              href="/#services"
               onClick={() => setMobileMenu(false)}
+              className="hover:text-red-600 transition"
             >
               Services
             </a>
 
-            <div>
 
-            <button
-              onClick={() => setMobileProducts(!mobileProducts)}
-              className="
-                flex
-                items-center
-                justify-between
-                w-full
-                font-semibold
-              "
-            >
 
-              <span>
-                Products
-              </span>
 
-              <ChevronDown
-                size={18}
+            {/* PRODUCTS */}
+
+            <div className="border-t border-gray-200 pt-4">
+
+              <button
+                onClick={() => setMobileProducts(!mobileProducts)}
+                className="
+            flex
+            items-center
+            justify-between
+            w-full
+            font-semibold
+            text-[17px]
+          "
+              >
+
+                <span>
+                  Products
+                </span>
+
+                <ChevronDown
+                  size={20}
+                  className={`
+              transition-transform duration-300
+              ${mobileProducts ? "rotate-180" : ""}
+            `}
+                />
+
+              </button>
+
+
+
+              {/* SUBMENU */}
+
+              <div
                 className={`
-                  transition-transform duration-300
-                  ${mobileProducts ? "rotate-180" : ""}
-                `}
-              />
+            overflow-hidden
+            transition-all
+            duration-300
+            ${mobileProducts
+                    ? "max-h-[1000px] mt-5"
+                    : "max-h-0"
+                  }
+          `}
+              >
 
-            </button>
+                <div className="flex flex-col gap-4 pl-4">
+
+                  {/* FIRE EXTINGUISHERS */}
+
+                  <div>
+
+                    <h3 className="text-red-600 font-bold mb-3">
+                      Fire Extinguishers
+                    </h3>
+
+                    <div className="flex flex-col gap-3 pl-3 mb-6">
+
+                      {products
+                        .filter(
+                          (product) =>
+                            product.category === "Fire Extinguishers"
+                        )
+                        .map((product) => (
+
+                          <Link
+                            key={product.id}
+                            href={`/products/${product.slug}`}
+                            onClick={() => {
+                              setMobileMenu(false);
+                              setMobileProducts(false);
+                            }}
+                            className="
+            text-gray-700
+            text-[15px]
+            hover:text-red-600
+            transition
+          "
+                          >
+
+                            {product.name}
+
+                          </Link>
+
+                        ))}
+
+                    </div>
+
+                  </div>
 
 
 
-            {/* MOBILE PRODUCTS LIST */}
 
-            {mobileProducts && (
+                  {/* FIRE SUPPRESSION */}
 
-              <div className="ml-4 mt-4 flex flex-col gap-3">
+                  <div>
 
-                {products.map((product) => (
+                    <h3 className="text-red-600 font-bold mb-3">
+                      Fire Suppression
+                    </h3>
 
-                  <Link
-                    key={product.id}
-                    href={`/products/${product.slug}`}
-                    onClick={() => {
-                      setMobileMenu(false);
-                      setMobileProducts(false);
-                    }}
-                    className="
-                      text-gray-700
-                      text-base
-                      hover:text-red-600
-                      transition
-                    "
-                  >
-                    {product.name}
-                  </Link>
+                    <div className="flex flex-col gap-3 pl-3 mb-6">
 
-                ))}
+                      {products
+                        .filter(
+                          (product) =>
+                            product.category === "Fire Suppression"
+                        )
+                        .map((product) => (
+
+                          <Link
+                            key={product.id}
+                            href={`/products/${product.slug}`}
+                            onClick={() => {
+                              setMobileMenu(false);
+                              setMobileProducts(false);
+                            }}
+                            className="
+            text-gray-700
+            text-[15px]
+            hover:text-red-600
+            transition
+          "
+                          >
+
+                            {product.name}
+
+                          </Link>
+
+                        ))}
+
+                    </div>
+
+                  </div>
+
+
+
+
+                  {/* ACCESSORIES */}
+
+                  <div>
+
+                    <h3 className="text-red-600 font-bold mb-3">
+                      Accessories
+                    </h3>
+
+                    <div className="flex flex-col gap-3 pl-3 mb-6">
+
+                      {products
+                        .filter(
+                          (product) =>
+                            product.category === "Accessories"
+                        )
+                        .map((product) => (
+
+                          <Link
+                            key={product.id}
+                            href={`/products/${product.slug}`}
+                            onClick={() => {
+                              setMobileMenu(false);
+                              setMobileProducts(false);
+                            }}
+                            className="
+            text-gray-700
+            text-[15px]
+            hover:text-red-600
+            transition
+          "
+                          >
+
+                            {product.name}
+
+                          </Link>
+
+                        ))}
+
+                    </div>
+
+                  </div>
+
+
+
+
+                  {/* WATERMIST */}
+
+                  <div>
+
+                    <h3 className="text-red-600 font-bold mb-3">
+                      Watermist / CAFS
+                    </h3>
+
+                    <div className="flex flex-col gap-3 pl-3">
+
+                      {products
+                        .filter(
+                          (product) =>
+                            product.category === "Watermist / CAFS"
+                        )
+                        .map((product) => (
+
+                          <Link
+                            key={product.id}
+                            href={`/products/${product.slug}`}
+                            onClick={() => {
+                              setMobileMenu(false);
+                              setMobileProducts(false);
+                            }}
+                            className="
+            text-gray-700
+            text-[15px]
+            hover:text-red-600
+            transition
+          "
+                          >
+
+                            {product.name}
+
+                          </Link>
+
+                        ))}
+
+                    </div>
+
+                  </div>
+
+                </div>
 
               </div>
 
-            )}
+            </div>
 
-          </div>
 
+
+
+            {/* CLIENTS */}
 
             <a
-              href="#clients"
+              href="/#clients"
               onClick={() => setMobileMenu(false)}
+              className="hover:text-red-600 transition"
             >
               Clients
             </a>
 
+
+
+
+            {/* CONTACT */}
+
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileMenu(false)}
+              className="hover:text-red-600 transition"
             >
               Contact
             </a>
@@ -448,6 +660,8 @@ export default function Navbar() {
         </div>
 
       )}
+
+
 
     </header>
 
